@@ -1,7 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import DeletedPage from './pages/DeletedPage';
+
 function App() {
   return (
-    <div>
-      <h1>Todo</h1>
+    <div className="app-container">
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/deleted" element={<DeletedPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }
